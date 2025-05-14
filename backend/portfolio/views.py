@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 class ProjectViewSet(viewsets.ModelViewSet):
-    queryset = Project.objects.all()
+    queryset = Project.objects.all().order_by('-id')
     serializer_class = ProjectSerializer
 
 class ContactViewSet(viewsets.ModelViewSet):
